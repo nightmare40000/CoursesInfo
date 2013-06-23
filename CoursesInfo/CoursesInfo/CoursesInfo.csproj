@@ -135,6 +135,16 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoursesInfo.Business\CoursesInfo.Business.csproj">
+      <Project>{8c500bb5-b14c-4720-a824-eda5099b77b3}</Project>
+      <Name>CoursesInfo.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoursesInfo.Core\CoursesInfo.Core.csproj">
+      <Project>{ef71e06f-16d2-4406-873e-aa31788afec1}</Project>
+      <Name>CoursesInfo.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
