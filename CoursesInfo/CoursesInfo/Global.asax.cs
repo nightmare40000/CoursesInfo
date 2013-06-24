@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
+using CoursesInfo.Business;
 
 namespace CoursesInfo
 {
@@ -19,6 +20,8 @@ namespace CoursesInfo
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            AppConfiguration.Configure();
         }
     }
 }
