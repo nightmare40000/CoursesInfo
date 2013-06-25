@@ -23,8 +23,8 @@ namespace CoursesInfo.Data
                 .Configure()
                 .Database(MsSqlConfiguration
                               .MsSql2008
-                              .ConnectionString(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=D:\GitHub\CoursesInfo\CoursesInfoData.mdf;Integrated Security=True;Connect Timeout=30"))
-                .Mappings(config => config.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()));
+                              .ConnectionString(x => x.FromConnectionStringWithKey("local")))
+                .Mappings(config => config.FluentMappings.AddFromAssemblyOf<CompanyMap>());
             _sessionFactory = _configuration.BuildSessionFactory();
         }
 
