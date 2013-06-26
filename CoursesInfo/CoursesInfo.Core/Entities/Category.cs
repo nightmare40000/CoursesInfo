@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoursesInfo.Core.Entities
 {
-    public class Category
+    public class Category:EntitiesObject
     {
         public virtual int Id { get; set; }
         public virtual string Name { get; set; }

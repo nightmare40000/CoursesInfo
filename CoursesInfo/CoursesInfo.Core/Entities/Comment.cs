@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoursesInfo.Core.Entities
 {
-    public class Comment
+    public class Comment:EntitiesObject
     {
         public virtual int Id { set; get; }
         public virtual string Text { set; get; }
