@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
 using CoursesInfo.Business;
+using System.Web.Optimization;
 
 namespace CoursesInfo
 {
@@ -17,6 +18,7 @@ namespace CoursesInfo
         {
             AreaRegistration.RegisterAllAreas();
 
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -1,0 +1,45 @@
+﻿@model System.Collections.Generic.List<CoursesInfo.Models.NewsModel>
+
+@{
+    string newsUrl = "news/";
+    string dots = "...";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+Content like this<br /> <br />
+
+<table>
+    <!-- -->
+    @foreach(var news in Model)
+    {       <tr>
+                        <td>
+                            <table class="news">
+                                <th colspan="2">
+                                    @news.Title
+                                </th>
+                                <tr>
+                                    <td class="left-part">
+                                        <img src="/Content/no_image.jpg" /> <br /> @news.Company.Name
+                                    </td>
+                                    <td class="right-part">
+                                         @if(news.Text.Length > 400)
+                                         {
+                                             @news.Text.Substring(0, 400)
+                                             @dots
+                                         }
+                                         else
+                                         {   
+                                             @news.Text 
+                                         }
+                                                                             
+                                        <br />
+                                        <a href="@newsUrl@news.Id">Read more</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                        </td>
+                </tr>
+    }
+</table>

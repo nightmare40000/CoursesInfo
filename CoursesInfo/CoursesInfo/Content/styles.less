@@ -1,0 +1,325 @@
+@body-lr-margin: 10%;
+@search-button-width: 100px;
+@header-background: cadetblue ;
+@footer-background: #9df0ff;
+@footer-height: 50px;
+@columns-width: 200px;
+@global-border-radius: 10px;
+
+.columns
+{
+    width: @columns-width;
+    background: burlywood;
+    vertical-align: top;
+    padding-top: 7px;
+    text-align: center;
+}
+body
+{
+  margin: 0 @body-lr-margin;
+  height: 100%;
+  padding: 0;
+}
+
+#page
+{
+  min-height: 100%;
+  position: relative;
+}
+
+#main
+{
+  padding-bottom: @footer-height;
+}
+
+.footer
+{
+  text-align: right;
+  position: absolute;
+  font-family: monospace;
+  font-size: 17px;
+  background: @footer-background;
+  width: 100% - 2*@body-lr-margin ;
+  height: @footer-height;
+  margin-top: -@footer-height;
+}
+
+
+
+
+html
+{
+  height: 100%;
+}
+
+.content
+{
+  width: 96%;
+  table
+  {
+    width: 100%;
+  }
+  padding: 2%;
+  background: antiquewhite;
+}
+
+.news
+{
+
+  padding: 10px;
+  width: 100%;
+  th
+  {
+    background: darkkhaki;
+    border: 1px solid black;
+    border-radius: @global-border-radius;
+  }
+
+
+  td
+  {
+    vertical-align: top;
+  }
+  .left-part
+  {
+    background: white;
+    width: 152px;
+    text-align: center;
+    border-radius: @global-border-radius;
+  }
+
+  .right-part
+  {
+    background: gray;
+    border-radius: @global-border-radius;
+    padding: 7px;
+  }
+
+  img
+  {
+    width: 150px;
+    border-radius: @global-border-radius;
+    border: 1px solid black
+  }
+  border: 1px solid black;
+  border-radius: @global-border-radius;
+}
+
+header
+{
+  width: 100%;
+  height: 140px;
+  background: @header-background;
+  padding-top: 40px;
+  font-size: 12px;
+
+  a
+  {
+    font-size: 12px;
+  }
+
+  input[type="text"]
+  {
+    height: 15px;
+    width: 100px;
+  }
+
+  input[type="button"]
+  {
+    height: 21px;
+    width: 45px;
+  }
+
+  table
+  {
+    width: 100%;
+  }
+
+
+}
+
+.search
+{
+  width: 100%;
+  text-align: center;
+  input[type="text"]
+  {
+     border-radius: @global-border-radius;
+     width: 300;
+  }
+
+  input[type="button"]
+  {
+    border-radius: @global-border-radius;
+    width: @search-button-width;
+  }
+  background: #a07798;
+}
+
+.logo
+{
+  padding-left: 40px;
+}
+
+.sign-up
+{
+  input[type="text"]
+  {
+    border-radius: @global-border-radius;
+  }
+
+  input[type="button"]
+  {
+    border-radius: @global-border-radius;
+  }
+
+  padding-right: 20px;
+  width: 180px;
+  form
+  {
+    padding: 8px;
+    width: 160px;
+    text-align: right;
+    a {
+        color: #ffaf34;
+        text-decoration: none;
+      }
+    border: 1px solid black;
+    background: white;
+    border-radius: @global-border-radius;
+  }
+}
+
+.left-column
+{
+  .columns;
+  text-align: center;
+
+}
+
+.right-column
+{
+  .columns;
+  padding: @columns-width/20;
+}
+
+.center-column
+{
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+.top-courses
+{
+  border-radius: @global-border-radius;
+  border: 1px solid black;
+  width: 100%;
+  background: white;
+  th
+  {
+    background: floralwhite;
+    border: 1px solid black;
+    border-radius: @global-border-radius;
+  }
+
+
+  .course-in-top
+  {
+    width: 100%;
+    border-radius: @global-border-radius;
+    border: 1px solid black;
+    th
+    {
+      background: floralwhite;
+      border: 1px solid black;
+      border-radius: @global-border-radius;
+    }
+    .course-description
+    {
+      background: #fffdc7;
+      border: 1px solid black;
+      border-radius: @global-border-radius;
+    }
+
+  }
+}
+
+// Навигационное меню
+.navigation-menu
+{
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 0 none;
+  padding: 0px;
+  width: @columns-width - @columns-width/10;
+  list-style-type: none;
+}
+
+.navigation-link
+{
+  padding: 0 6px;
+  display: block;
+  color: #FFFFFF;
+  font: bold 12px/28px Verdana, Arial;
+  text-decoration: none;
+  height: auto !important;
+}
+
+// Пункты меню
+.menu-item
+{
+  display: block !important;
+  display: inline;
+  position: relative;
+  border:#003366 2px solid;
+  border-radius: @global-border-radius;
+  background: #ffaf34;
+  width: @columns-width - @columns-width/10;
+
+  &:hover
+  {
+    border: #FFFFFF 2px solid;
+    ul
+    {
+      display: block;
+    }
+  }
+
+
+
+  a
+  {
+    .navigation-link;
+  }
+}
+
+// Подменю
+.sub-menu
+{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: @columns-width - 3*@columns-width/10;
+}
+
+.menu
+{
+  .navigation-menu;
+
+
+
+  li
+  {
+    .menu-item;
+    ul
+    {
+      .sub-menu;
+      li
+      {
+        .menu-item;
+      }
+    }
+  }
+}

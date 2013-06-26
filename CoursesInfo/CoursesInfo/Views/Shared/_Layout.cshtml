@@ -1,0 +1,70 @@
+﻿@using System.Web.Optimization;
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    @Styles.Render("~/CSS")
+    @Scripts.Render("/Scripts/less")
+    
+</head>
+
+
+
+<body>
+    <div id="page">
+    <div id="main">
+    <header>
+        <table>
+        <tr>
+        <td class="logo">
+            <h1> Информационный портал </h1>
+        </td>
+        <td class="sign-up">
+             <form action="login">
+             <div>
+                  <label for="login">Логин:</label> <input type="text" name="login" id="login">
+             </div>
+             <div>
+                 <label for="password">Пароль:</label> <input type="text" name="password" id="password">
+             </div>
+             <div style="display: inline; font-size: 15px;">
+                 <a href="/resetpassword">Забыли пароль?</a>
+                 <a href="/registration">Регистрация</a><br />
+                 <input type="button" value="Вход" />
+             </div>
+             </form>
+        </td>
+        </tr>
+        </table>
+    </header>
+
+    <table style="width:100%; border-spacing: 0px;">
+        <tr>
+            <td class="left-column">
+                @Html.Action("_Menu")
+            </td>
+            <td class="center-column">
+                <div class="search">
+                       <input type="text" name="searching-string">
+                       <input type="button" value="Поиск">
+                </div>
+                <div class="content">
+                      @RenderBody()
+                </div>
+            </td>
+            <td class="right-column">
+                @Html.Action("_TopCourses")
+            </td>
+        </tr>
+    </table>
+    </div>
+    </div>
+    <div class="footer">
+        &copy; BigSoft IT-Lab 2013
+    </div>
+
+</body>
+</html>
