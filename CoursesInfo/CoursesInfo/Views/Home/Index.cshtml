@@ -1,40 +1,41 @@
-﻿@model System.Collections.Generic.List<CoursesInfo.Models.NewsModel>
+﻿@model CoursesInfo.Models.MainPageModel
 
 @{
     string newsUrl = "news/";
     string dots = "...";
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    IEnumerable<CoursesInfo.Core.Entities.News> news = Model.News;
 }
 
 Content like this<br /> <br />
 
 <table>
     <!-- -->
-    @foreach(var news in Model)
+    @foreach(var _news in Model.News)
     {       <tr>
                         <td>
                             <table class="news">
                                 <th colspan="2">
-                                    @news.Title
+                                    @_news.Title
                                 </th>
                                 <tr>
                                     <td class="left-part">
-                                        <img src="/Content/no_image.jpg" /> <br /> @news.Company.Name
+                                        <img src="/Content/no_image.jpg" /> <br /> @_news.Company.Name
                                     </td>
                                     <td class="right-part">
-                                         @if(news.Text.Length > 400)
+                                         @if(_news.Text.Length > 400)
                                          {
-                                             @news.Text.Substring(0, 400)
+                                             @_news.Text.Substring(0, 400)
                                              @dots
                                          }
                                          else
                                          {   
-                                             @news.Text 
+                                             @_news.Text 
                                          }
                                                                              
                                         <br />
-                                        <a href="@newsUrl@news.Id">Read more</a>
+                                        <a href="@newsUrl@_news.Id">Read more</a>
                                     </td>
                                 </tr>
                             </table>

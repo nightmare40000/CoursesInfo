@@ -8,7 +8,7 @@ using CoursesInfo.Data;
 
 namespace CoursesInfo.Business.Services
 {
-    class CategoryService: Service
+    public class CategoryService: Service
     {
         private readonly IRepository<Category> _categoryRepository
             =new NHibernateRepository<Category>();

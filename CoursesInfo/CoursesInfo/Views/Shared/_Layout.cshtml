@@ -44,7 +44,7 @@
     <table style="width:100%; border-spacing: 0px;">
         <tr>
             <td class="left-column">
-                @Html.Action("_Menu")
+                @{ Html.RenderPartial("~/Views/Shared/_Menu.cshtml");}
             </td>
             <td class="center-column">
                 <div class="search">
@@ -56,7 +56,7 @@
                 </div>
             </td>
             <td class="right-column">
-                @Html.Action("_TopCourses")
+                @{ Html.RenderPartial("~/Views/Shared/_TopCourses.cshtml");}
             </td>
         </tr>
     </table>

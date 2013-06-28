@@ -8,14 +8,14 @@ using CoursesInfo.Data;
 
 namespace CoursesInfo.Business.Services
 {
-    public class NewsService
+    public class TopCoursesService
     {
-        private readonly IRepository<News> _newsRepository
-            = new NHibernateRepository<News>();
+        private readonly IRepository<Course> _courseRepository
+            = new NHibernateRepository<Course>();
 
-        public IEnumerable<News> GetAllNews()
+        public IEnumerable<Course> GetTopCourses()
         {
-            return _newsRepository.GetAll();
+            return _courseRepository.GetAll();
         }
     }
 }

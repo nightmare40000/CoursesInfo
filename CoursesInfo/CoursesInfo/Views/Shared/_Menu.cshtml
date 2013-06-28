@@ -1,4 +1,7 @@
-﻿<b>Menu:</b>
+﻿@model CoursesInfo.Models.MainPageModel
+
+
+<strong>Menu:</strong>
                 <ul class="menu">
                        <li><a href="#">Item1</a></li>
                        <li><a href="#">Item2</a>
@@ -11,3 +14,15 @@
                        <li><a href="#">Item3</a></li>
                        <li><a href="#">Item4</a></li>
                 </ul>
+
+
+<strong> Категории </strong>
+
+<ul class="menu">
+
+@foreach (CoursesInfo.Core.Entities.Category category in Model.Categories)
+{ 
+        <li><a href="/categories/@category.Id">@category.Name</a></li>
+}
+
+</ul>

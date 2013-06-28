@@ -25,6 +25,10 @@ namespace CoursesInfo.Data
                               .MsSql2008
                               .ConnectionString(x => x.FromConnectionStringWithKey("local")))
                 .Mappings(config => config.FluentMappings.AddFromAssemblyOf<CompanyMap>());
+
+            var export = new SchemaUpdate(_configuration.BuildConfiguration());
+            export.Execute(true, true);
+
             _sessionFactory = _configuration.BuildSessionFactory();
         }
 

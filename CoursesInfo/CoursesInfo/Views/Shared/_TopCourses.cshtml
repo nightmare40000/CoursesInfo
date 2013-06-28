@@ -1,23 +1,32 @@
-﻿<table class="top-courses">
+﻿@model CoursesInfo.Models.MainPageModel 
+
+@{
+       IEnumerable<CoursesInfo.Core.Entities.Course> courses = Model.Courses;    
+ }
+ 
+<table class="top-courses">
                     <th>
                         Top 5 Courses :
                     </th>
                     <!-- -->
-                    <tr>
-                        <td>
-                            <br />
-                            <table class="course-in-top">
-                                <th colspan="2">
-                                    Course Title (Rating)
-                                </th>
-                                <tr>
-                                    <td colspan="2" class="course-description">
-                                        Course Description
-                                        <br>
-                                        <a href="/courses/course_ID">Read more</a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
+                    @foreach(CoursesInfo.Core.Entities.Course course in courses)
+                    {    
+                        <tr>
+                            <td>
+                                <br />
+                                <table class="course-in-top">
+                                    <th colspan="2">
+                                        @course.Name
+                                    </th>
+                                    <tr>
+                                        <td colspan="2" class="course-description">
+                                            @course.CoursesInfo
+                                            <br>
+                                            <a href="/courses/course_ID">Read more</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    }
 </table>
