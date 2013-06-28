@@ -17,5 +17,10 @@ namespace CoursesInfo.Business.Services
         {
             return _categoryRepository.GetAll();
         }
+        
+        public Category GetCategory(int id)
+        {
+            return _categoryRepository.Get(id);
+        }
     }
 }

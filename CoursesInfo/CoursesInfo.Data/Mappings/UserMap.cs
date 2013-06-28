@@ -21,7 +21,7 @@ namespace CoursesInfo.Data.Mappings
             Map(x => x.PermissionGroup);
 
             HasManyToMany(x => x.Comments)
-                .Table("UserCommets")
+                .Table("UserComments")
                 .ParentKeyColumn("IdUser")
                 .ChildKeyColumn("IdComment")
                 .Cascade.SaveUpdate();

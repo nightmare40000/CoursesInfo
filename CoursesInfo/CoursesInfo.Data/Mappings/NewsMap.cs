@@ -24,6 +24,11 @@ namespace CoursesInfo.Data.Mappings
                 .ChildKeyColumn("IdTag")
                 .Cascade.SaveUpdate();
             References(x => x.Company);
+            HasManyToMany(x => x.Comments)
+                .Table("NewsComment")
+                .ParentKeyColumn("IdNews")
+                .ChildKeyColumn("IdComment")
+                .Cascade.SaveUpdate();
         }
     }
 }

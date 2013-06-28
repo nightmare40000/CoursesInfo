@@ -8,7 +8,7 @@ using CoursesInfo.Data;
 
 namespace CoursesInfo.Business.Services
 {
-    public class TopCoursesService
+    public class CourseService:Service
     {
         private readonly IRepository<Course> _courseRepository
             = new NHibernateRepository<Course>();

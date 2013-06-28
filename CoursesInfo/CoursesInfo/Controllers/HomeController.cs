@@ -18,7 +18,7 @@ namespace CoursesInfo.Controllers
         {
             CategoryService categoryService = new CategoryService();
             NewsService newsService = new NewsService();
-            TopCoursesService topCoursesService = new TopCoursesService();
+            CourseService topCoursesService = new CourseService();
             
             MainPageModel model = new MainPageModel();
             model.News = newsService.GetAllNews();

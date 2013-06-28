@@ -12,6 +12,7 @@ namespace CoursesInfo.Core.Entities
         public virtual string Title { set; get; }
         public virtual string Text { set; get; }
         public virtual IList<Tag> Tags { set; get; }
+        public virtual IList<Comment> Comments { set; get; }
         public virtual Company Company { set; get; }
     }
 }

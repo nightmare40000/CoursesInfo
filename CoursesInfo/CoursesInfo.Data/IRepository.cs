@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using CoursesInfo.Core;
+using CoursesInfo.Core.Entities;
 
 namespace CoursesInfo.Data
 {
@@ -9,6 +10,8 @@ namespace CoursesInfo.Data
         T Get(object id);
         
         IEnumerable<T> GetAll();
+
+      //  IList<Comment> GetNewsCommet();
 
         void Save(T entity);
 

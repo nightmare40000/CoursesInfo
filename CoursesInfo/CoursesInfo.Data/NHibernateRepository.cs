@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using CoursesInfo.Core;
+using CoursesInfo.Core.Entities;
 using NHibernate;
 
 namespace CoursesInfo.Data
@@ -22,6 +24,15 @@ namespace CoursesInfo.Data
         public override IEnumerable<T> GetAll()
         {
             return _session.QueryOver<T>().List();
+        }
+
+        public IList<News> GetNewsComment(int id)
+        {
+            return _session.QueryOver<News>()
+                           .Where(x => x.Id == id)
+                           .JoinQueryOver<Comment>(x => x.Comments)
+                           .Where(x => x.Group == 1)
+                           .List();
         }
 
         public override void Save(T entity)
