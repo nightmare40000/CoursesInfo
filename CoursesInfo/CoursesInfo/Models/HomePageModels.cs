@@ -19,4 +19,9 @@ namespace CoursesInfo.Models
         public virtual Category CurentCategory { get; set; }
     }
 
+    public class NewsModel : MainPageModel
+    {
+        public virtual News CurrentNews { get; set; }
+    }
+
 }

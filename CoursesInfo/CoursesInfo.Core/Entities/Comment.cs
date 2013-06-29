@@ -8,8 +8,8 @@ namespace CoursesInfo.Core.Entities
 {
     public class Comment:EntitiesObject
     {
-        public virtual int Id { set; get; }
-        public virtual string Text { set; get; }
-        public virtual int Group { set; get; }
+        public virtual int Id { get; set; }
+        public virtual int ContentGroup { get; set; }
+        public virtual string Text { get; set; }        
     }
 }

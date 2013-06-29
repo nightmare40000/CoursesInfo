@@ -34,10 +34,10 @@ namespace CoursesInfo.Controllers
             NewsService newsService = new NewsService();
             CourseService CoursesService = new CourseService();
 
-            MainPageModel model = new MainPageModel();
-            model.News = new List<News> { newsService.GetNews(id) };
+            NewsModel model = new NewsModel();
+            model.News = newsService.GetAllNews();
             model.Courses = CoursesService.GetTopCourses();
-
+            model.CurrentNews = newsService.GetNews(id);
             model.Categories = categoryService.GetAllCategory();
             return View(model);
         

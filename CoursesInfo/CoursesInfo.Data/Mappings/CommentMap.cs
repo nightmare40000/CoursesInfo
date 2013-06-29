@@ -17,7 +17,7 @@ namespace CoursesInfo.Data.Mappings
             Id(x => x.Id).GeneratedBy.Native();
 
             Map(x => x.Text);
-            Map(x => x.Group);
+            Map(x => x.ContentGroup);
         }
     }
 }

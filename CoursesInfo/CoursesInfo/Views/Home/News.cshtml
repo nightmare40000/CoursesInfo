@@ -1,9 +1,9 @@
-﻿@model CoursesInfo.Models.MainPageModel
+﻿@model CoursesInfo.Models.NewsModel
 
 @{
     ViewBag.Title = "Новость - " + Model.News.First().Title;
+    string noComments = "Ещё нет комментариев";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    IEnumerable<CoursesInfo.Core.Entities.News> news = Model.News;
 }
 
 <a href="~/Home/Index">Home</a> ->
@@ -11,24 +11,43 @@
 
 <table>
     <!-- -->
-    @foreach(var _news in Model.News)
-    {       <tr>
+      <tr>
                         <td>
                             <table class="news">
                                 <th colspan="2">
-                                    @_news.Title
+                                    @Model.CurrentNews.Title
                                 </th>
                                 <tr>
                                     <td class="left-part">
-                                        <img src="/Content/no_image.jpg" /> <br /> @_news.Company.Name
+                                        <img src="/Content/no_image.jpg" /> <br /> @Model.CurrentNews.Company.Name
                                     </td>
                                     <td class="right-part">
-                                             @_news.Text
+                                             @Model.CurrentNews.Text
                                     </td>
                                 </tr>
+                                <tr>
+                                       <td colspan="2" class="comments-header"><br \> <strong>Комментарии:</strong><br \> </td>
+                                </tr>
+                                @if (Model.CurrentNews.Comments.Count() == 0)
+                                { 
+                                    @noComments;
+                                }
+                                else    
+                                {
+                                    foreach (var comment in Model.CurrentNews.Comments)
+                                    { 
+                                        <tr class="comment">
+                                            <td>
+                                                <img src="~/Content/no_image.jpg">
+                                            </td>
+                                            <td>
+                                                @comment.Text
+                                            </td>
+                                        </tr>
+                                    }
+                                }    
                             </table>
                             <br />
                         </td>
                 </tr>
-    }
 </table>

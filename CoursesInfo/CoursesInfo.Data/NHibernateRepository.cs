@@ -31,7 +31,7 @@ namespace CoursesInfo.Data
             return _session.QueryOver<News>()
                            .Where(x => x.Id == id)
                            .JoinQueryOver<Comment>(x => x.Comments)
-                           .Where(x => x.Group == 1)
+                           .Where(x => x.ContentGroup == 1)
                            .List();
         }
 
