@@ -13,6 +13,7 @@ namespace CoursesInfo.Data.Mappings
         public CommentMap()
         {
             Table("Comment");
+
             Id(x => x.Id).GeneratedBy.Native();
 
             Map(x => x.Text);
