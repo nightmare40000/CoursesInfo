@@ -13,4 +13,10 @@ namespace CoursesInfo.Models
         public virtual IEnumerable<Course> Courses { set; get; }
     }
 
+
+    public class CategoriesModel : MainPageModel
+    {
+        public virtual Category CurentCategory { get; set; }
+    }
+
 }

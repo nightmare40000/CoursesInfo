@@ -1,0 +1,46 @@
+﻿@model CoursesInfo.Models.CategoriesModel
+
+@{
+    string coursesUrl = "/Home/Courses/";
+    string noCourses = "Нету курсов в этой категории =(";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    IEnumerable<CoursesInfo.Core.Entities.Category> categories = Model.Categories;
+}
+
+<a href="~/Home/Index">Home</a> ->
+<a href="~/Home/AllCategories">All categories</a><br /> <br />
+
+<table class="news">
+       <th colspan="2">
+             @Model.CurentCategory.Name
+       </th>
+       @if (Model.CurentCategory.Courses.Count() == 0)
+       {
+            <tr>
+                <td colspan="2">  
+                    @noCourses
+                </td>
+            </tr>
+       }
+       else
+       {
+            foreach(var course in Model.CurentCategory.Courses)
+            {
+               <tr>
+                  <td colspan="2" class="category-header"> @course.Name </td>
+               </tr>
+               <tr>
+                  <td class="left-part">
+                      <img src="/Content/no_image.jpg" /> <br /> 
+                       @course.Company.Name
+                  </td>
+                  <td class="right-part">
+                       @course.CoursesInfo
+                  <br />
+                  <a href="@coursesUrl@course.Id">Read more</a>
+                  </td>
+               </tr>
+           }
+         } 
+</table>

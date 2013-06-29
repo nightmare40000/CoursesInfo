@@ -149,6 +149,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\less.js" />
     <Content Include="Content\no_image.jpg" />
+    <Content Include="Content\styles.css">
+      <DependentUpon>styles.less</DependentUpon>
+    </Content>
+    <Content Include="Content\styles.min.css">
+      <DependentUpon>styles.less</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -194,6 +200,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Menu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\News.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\AllNews.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Categories.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\AllCategories.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

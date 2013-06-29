@@ -28,6 +28,49 @@ namespace CoursesInfo.Controllers
             return View(model);
         }
 
-       
+        public ActionResult News(int id)
+        {
+            CategoryService categoryService = new CategoryService();
+            NewsService newsService = new NewsService();
+            CourseService CoursesService = new CourseService();
+
+            MainPageModel model = new MainPageModel();
+            model.News = new List<News> { newsService.GetNews(id) };
+            model.Courses = CoursesService.GetTopCourses();
+
+            model.Categories = categoryService.GetAllCategory();
+            return View(model);
+        
+        }
+
+        public ActionResult AllNews(string mode)
+        {
+            CategoryService categoryService = new CategoryService();
+            NewsService newsService = new NewsService();
+            CourseService topCoursesService = new CourseService();
+
+            MainPageModel model = new MainPageModel();
+            model.News = newsService.GetAllNews();
+            model.Courses = topCoursesService.GetTopCourses();
+
+            model.Categories = categoryService.GetAllCategory();
+            return View(model);
+
+        }
+
+        public ActionResult Categories(int id)
+        {
+            CategoryService categoryService = new CategoryService();
+            NewsService newsService = new NewsService();
+            CourseService topCoursesService = new CourseService();
+
+            CategoriesModel model = new CategoriesModel();
+            model.News = newsService.GetAllNews();
+            model.Courses = topCoursesService.GetTopCourses();
+            model.Categories = categoryService.GetAllCategory();
+            model.CurentCategory = categoryService.GetCategory(id);
+            return View(model);
+
+        }
    }
 }

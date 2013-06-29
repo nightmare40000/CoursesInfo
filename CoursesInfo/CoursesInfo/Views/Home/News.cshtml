@@ -1,12 +1,13 @@
 ﻿@model CoursesInfo.Models.MainPageModel
 
 @{
-    string newsUrl = "/Home/News/";
-    string dots = "...";
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Новость - " + Model.News.First().Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
     IEnumerable<CoursesInfo.Core.Entities.News> news = Model.News;
 }
+
+<a href="~/Home/Index">Home</a> ->
+<a href="~/Home/AllNews">All news</a>
 
 <table>
     <!-- -->
@@ -22,18 +23,7 @@
                                         <img src="/Content/no_image.jpg" /> <br /> @_news.Company.Name
                                     </td>
                                     <td class="right-part">
-                                         @if(_news.Text.Length > 400)
-                                         {
-                                             @_news.Text.Substring(0, 400)
-                                             @dots
-                                         }
-                                         else
-                                         {   
-                                             @_news.Text 
-                                         }
-                                                                             
-                                        <br />
-                                        <a href="@newsUrl@_news.Id">Read more</a>
+                                             @_news.Text
                                     </td>
                                 </tr>
                             </table>
